@@ -1,0 +1,80 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'wakatime/vim-wakatime'
+Plug 'scrooloose/nerdcommenter'
+Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+" Jellybean color scheme
+Plug 'nanotech/jellybeans.vim'
+
+" JS Plugins
+Plug 'gavocanov/vim-js-indent'
+Plug 'mxw/vim-jsx'
+Plug 'othree/javascript-libraries-syntax.vim'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plug 'L9'
+" Git plugin not hosted on GitHub
+Plug 'git://git.wincent.com/command-t.git'
+
+" View/Search commits with fzf
+nmap <Leader>c :Commits<cr>
+" Search with fzf
+nmap <C-p> :Files<cr>
+
+" set tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Binds
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap jj <esc>
+
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+set ruler
+set number
+set relativenumber
+set backspace=indent,eol,start
+
+" searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" yanks to OSX clipboard
+set clipboard=unnamed
+
+" set leader to spacebar
+:let mapleader = " "
+
+" move line-wise on wrapped lines
+nnoremap j gj
+nnoremap k gk
+" colors
+set background=dark
+
+" highlight comments in vim
+highlight Comment cterm=italic
