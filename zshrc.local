@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/andrewratliff/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 DEFAULT_USER="andrewratliff"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
