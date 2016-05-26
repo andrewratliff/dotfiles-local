@@ -66,5 +66,8 @@ pip install mackup
 npm install -g yo
 npm install -g generator-webapp
 
+# Install Pure prompt
+npm install --global pure-prompt
+
 # verify
 brew doctor
