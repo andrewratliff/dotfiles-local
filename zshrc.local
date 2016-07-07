@@ -10,6 +10,20 @@ alias reload="source ~/.zshrc"
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 
+# set java_home variable for apache maven
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Pure prompt
 autoload -U promptinit && promptinit
 prompt pure
+
+# Auto-attach new shell sessions in tmux
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+
+ensure_tmux_is_running

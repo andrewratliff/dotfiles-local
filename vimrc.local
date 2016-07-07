@@ -1,32 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
-Plug 'altercation/vim-colors-solarized'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'wakatime/vim-wakatime'
-Plug 'scrooloose/nerdcommenter'
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-" Jellybean color scheme
-Plug 'nanotech/jellybeans.vim'
-
-" JS Plugins
-Plug 'gavocanov/vim-js-indent'
-Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plug 'L9'
-" Git plugin not hosted on GitHub
-Plug 'git://git.wincent.com/command-t.git'
-
 " View/Search commits with fzf
 nmap <Leader>c :Commits<cr>
 " Search with fzf
