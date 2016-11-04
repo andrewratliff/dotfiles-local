@@ -39,7 +39,9 @@ set ignorecase
 set smartcase
 
 " yanks to OSX clipboard
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard=unnamed
+endif
 
 " set leader to spacebar
 :let mapleader = " "

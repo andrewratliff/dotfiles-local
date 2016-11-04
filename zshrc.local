@@ -1,5 +1,5 @@
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/pgsql/postgresql-9.3.5/src/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Colors to work with tmux/vim
 alias tmux="TERM=screen-256color-bce tmux"
