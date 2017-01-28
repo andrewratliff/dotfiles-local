@@ -6,6 +6,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 alias dots="~/dotfiles-local"
 alias reload="source ~/.zshrc"
+alias qa="cd ~/src/work/qa"
+alias notes="cd ~/Dropbox/notes"
 
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
