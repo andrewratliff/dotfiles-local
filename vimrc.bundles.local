@@ -18,5 +18,5 @@ Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }

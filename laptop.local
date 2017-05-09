@@ -59,6 +59,7 @@ brew cask install intellij-idea
 brew cask install google-drive
 brew cask install java
 brew cask install java6
+brew cask install laverna
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
