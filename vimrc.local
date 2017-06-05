@@ -49,8 +49,10 @@ endif
 " move line-wise on wrapped lines
 nnoremap j gj
 nnoremap k gk
+
 " colors
 set background=dark
+colorscheme jellybeans
 
 " highlight comments in vim
 "highlight Comment cterm=italic

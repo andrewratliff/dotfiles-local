@@ -9,13 +9,13 @@ Plug 'othree/javascript-libraries-syntax.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plug 'L9'
 " Git plugin not hosted on GitHub
-Plug 'git://git.wincent.com/command-t.git'
+"Plug 'git://git.wincent.com/command-t.git'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'scrooloose/nerdcommenter'
