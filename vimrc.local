@@ -38,6 +38,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" automatically change current directory to the file you are editing
+set autochdir
+
 " yanks to OSX clipboard
 if $TMUX == ''
   set clipboard=unnamed
