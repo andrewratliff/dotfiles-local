@@ -1,14 +1,6 @@
 # Copy-paste integration
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
-# Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
-
-# Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-
 # ZSH as default shell
 set-option -g default-command /bin/zsh
 
@@ -21,6 +13,16 @@ set -g default-terminal "screen-256color"
 ##################
 #### Keybinds ####
 ##################
+
+# Faster split resizing
+bind -n S-Left resize-pane -L 2
+bind -n S-Right resize-pane -R 2
+bind -n S-Down resize-pane -D 1
+bind -n S-Up resize-pane -U 1
+bind -n C-Left resize-pane -L 10
+bind -n C-Right resize-pane -R 10
+bind -n C-J resize-pane -D 5
+bind -n C- resize-pane -U 5
 
 # reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
@@ -52,17 +54,8 @@ bind l select-pane -R
 bind-key -r C-h select-window -t :-
 bind-key -r C-l select-window -t :+
 
-
 # Use vim keybindings in copy mode
 setw -g mode-keys vi
-
-# # Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
-
-# # Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # More intuitive pane splitting key-bindings, open all in current path
 bind-key - split-window -v  -c '#{pane_current_path}'
