@@ -37,6 +37,17 @@ unbind C-b
 # Use vim keybindings in copy mode
 setw -g mode-keys vi
 
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -T copy-mode-vi 'v' -X begin-selection
+bind-key -T copy-mode-vi 'y' -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter -X copy-pipe "reattach-to-user-namespace pbcopy"
+
 # initialize sessions
 bind S source-file ~/.dotfiles/tmux/sisl.tmux.conf
 
@@ -53,9 +64,6 @@ bind k select-pane -U
 bind l select-pane -R
 bind-key -r C-h select-window -t :-
 bind-key -r C-l select-window -t :+
-
-# Use vim keybindings in copy mode
-setw -g mode-keys vi
 
 # More intuitive pane splitting key-bindings, open all in current path
 bind-key - split-window -v  -c '#{pane_current_path}'
