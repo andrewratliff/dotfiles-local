@@ -14,15 +14,11 @@ set -g default-terminal "screen-256color"
 #### Keybinds ####
 ##################
 
-# Faster split resizing
-bind -n S-Left resize-pane -L 2
-bind -n S-Right resize-pane -R 2
-bind -n S-Down resize-pane -D 1
-bind -n S-Up resize-pane -U 1
-bind -n C-Left resize-pane -L 10
-bind -n C-Right resize-pane -R 10
-bind -n C-J resize-pane -D 5
-bind -n C- resize-pane -U 5
+# Setup 'v' to begin selection as in Vim
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'V' send -X select-line
+bind-key -T copy-mode-vi 'r' send -X rectangle-toggle
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
@@ -34,23 +30,15 @@ bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux past
 bind C-a send-prefix
 unbind C-b
 
-# Setup 'v' to begin selection as in Vim
-bind-key -T copy-mode-vi 'v' -X begin-selection
-bind-key -T copy-mode-vi 'y' -X copy-pipe "reattach-to-user-namespace pbcopy"
-
-# Update default binding of `Enter` to also use copy-pipe
-unbind -T copy-mode-vi Enter
-bind-key -T copy-mode-vi Enter -X copy-pipe "reattach-to-user-namespace pbcopy"
-
 # initialize sessions
 bind S source-file ~/.dotfiles/tmux/sisl.tmux.conf
 
-# More intuitive pane splitting key-bindings, open all in current path
+# more intuitive pane splitting key-bindings, open all in current path
 bind-key - split-window -v  -c '#{pane_current_path}'
 bind-key \ split-window -h  -c '#{pane_current_path}'
 bind c new-window -c '#{pane_current_path}'
 
-# More intuitive pane splitting key-bindings, open all in current path
+# more intuitive pane splitting key-bindings, open all in current path
 bind-key - split-window -v  -c '#{pane_current_path}'
 bind-key \ split-window -h  -c '#{pane_current_path}'
 bind c new-window -c '#{pane_current_path}'

@@ -1,12 +1,8 @@
 set nocompatible              " be iMproved, required
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
-set ruler
-set number
-set backspace=indent,eol,start
+filetype off                  " required
 
+" View/Search commits with fzf
+nmap <Leader>c :Commits<cr>
 " Search with fzf
 nmap <C-p> :Files<cr>
 
@@ -26,6 +22,16 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 inoremap jj <esc>
 
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+set ruler
+set number
+" set relativenumber
+set backspace=indent,eol,start
+
 " searching
 set hlsearch
 set incsearch
@@ -35,11 +41,13 @@ set smartcase
 " automatically change current directory to the file you are editing
 set autochdir
 
-" copy paste to clipboard
-set clipboard=unnamed
+" yanks to OSX clipboard
+if $TMUX == ''
+  set clipboard=unnamed
+endif
 
 " set leader to spacebar
-let mapleader = " "
+:let mapleader = " "
 
 " move line-wise on wrapped lines
 nnoremap j gj
@@ -48,3 +56,6 @@ nnoremap k gk
 " colors
 set background=dark
 colorscheme jellybeans
+
+" highlight comments in vim
+"highlight Comment cterm=italic

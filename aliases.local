@@ -1,2 +1,4 @@
 # Unix
 alias cat="ccat"
+alias vim="nvim"
+alias vi="nvim"
