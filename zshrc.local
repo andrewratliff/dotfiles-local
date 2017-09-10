@@ -1,12 +1,11 @@
 # User configuration
-export PATH="/usr/local/pgsql/postgresql-9.3.5/src/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aratliff/src/apache-maven-2.2.1/bin"
+export PATH="/usr/local/pgsql/postgresql-9.3.5/src/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Colors to work with tmux/vim
 alias tmux="TERM=screen-256color-bce tmux"
 
 alias dots="~/dotfiles-local"
 alias reload="source ~/.zshrc"
-alias qa="cd ~/src/work/qa"
 alias notes="cd ~/Dropbox/notes"
 
 export PATH="$HOME/.bin:$PATH"
@@ -30,3 +29,9 @@ prompt pure
 #
 # ensure_tmux_is_running
 
+# Source arin config files if they exist
+if [ -f ~/dotfiles-local/arin ]; then
+    source ~/dotfiles-local/arin
+else
+    print "404: ~/dotfiles-local/arin not found."
+fi

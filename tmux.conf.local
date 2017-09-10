@@ -14,17 +14,8 @@ set -g default-terminal "screen-256color"
 #### Keybinds ####
 ##################
 
-# Setup 'v' to begin selection as in Vim
-bind-key -T copy-mode-vi 'v' send -X begin-selection
-bind-key -T copy-mode-vi 'V' send -X select-line
-bind-key -T copy-mode-vi 'r' send -X rectangle-toggle
-bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
-
 # reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
-
-# Bind ']' to use pbpaste
-bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
 # bind 'C-a C-a' to type 'C-a'
 bind C-a send-prefix
@@ -38,7 +29,13 @@ bind-key - split-window -v  -c '#{pane_current_path}'
 bind-key \ split-window -h  -c '#{pane_current_path}'
 bind c new-window -c '#{pane_current_path}'
 
-# more intuitive pane splitting key-bindings, open all in current path
-bind-key - split-window -v  -c '#{pane_current_path}'
-bind-key \ split-window -h  -c '#{pane_current_path}'
-bind c new-window -c '#{pane_current_path}'
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
