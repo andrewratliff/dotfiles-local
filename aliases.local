@@ -1,6 +1,7 @@
 # Unix
 alias cat="ccat"
-alias vim="nvim"
-alias vi="nvim"
-alias daytxt="vim $(date '+%d-%b-%Y').txt"
-alias daymd="vim $(date '+%d-%b-%Y').md"
+# alias vim="nvim"
+# alias vi="nvim"
+alias lb="~/dotfiles-local/functions.sh logbook"
+alias tl="~/dotfiles-local/functions.sh tail_logs $1"
+alias props="~/dotfiles-local/functions.sh cat_properties $1"

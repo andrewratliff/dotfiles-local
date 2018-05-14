@@ -1,6 +1,6 @@
 # User configuration
 export PATH="/usr/local/pgsql/postgresql-9.3.5/src/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 # Colors to work with tmux/vim
 alias tmux="TERM=screen-256color-bce tmux"
 
@@ -18,15 +18,15 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 autoload -U promptinit && promptinit
 prompt pure
 
-# # Auto-attach new shell sessions in tmux
+# Auto-attach new shell sessions in tmux
 # _not_inside_tmux() { [[ -z "$TMUX" ]] }
-#
+
 # ensure_tmux_is_running() {
 #   if _not_inside_tmux; then
 #     tat
 #   fi
 # }
-#
+
 # ensure_tmux_is_running
 
 # Source arin config files if they exist
