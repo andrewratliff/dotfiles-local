@@ -8,7 +8,7 @@ set number
 set backspace=indent,eol,start
 
 " Search with fzf
-nmap <C-p> :Files<cr>
+nnoremap <C-p> :wa<CR>:Files<CR>
 
 " set tabs
 set tabstop=2
@@ -24,16 +24,12 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-inoremap jj <esc>
 
 " searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-" automatically change current directory to the file you are editing
-set autochdir
 
 " copy paste to clipboard
 set clipboard=unnamed
@@ -47,4 +43,5 @@ nnoremap k gk
 
 " colors
 set background=dark
-colorscheme jellybeans
+" colorscheme jellybeans
+colorscheme necromancer

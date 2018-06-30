@@ -2,7 +2,7 @@
 export PATH="/usr/local/pgsql/postgresql-9.3.5/src/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 # Colors to work with tmux/vim
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-255color-bce tmux"
 
 alias dots="~/dotfiles-local"
 alias reload="source ~/.zshrc"
@@ -18,6 +18,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 autoload -U promptinit && promptinit
 prompt pure
 
+export CL=/Users/aratliff/src/commonlit/commonlit
+
 # Auto-attach new shell sessions in tmux
 # _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
@@ -27,11 +29,5 @@ prompt pure
 #   fi
 # }
 
-# ensure_tmux_is_running
-
-# Source arin config files if they exist
-if [ -f ~/dotfiles-local/arin ]; then
-    source ~/dotfiles-local/arin
-else
-    print "404: ~/dotfiles-local/arin not found."
-fi
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

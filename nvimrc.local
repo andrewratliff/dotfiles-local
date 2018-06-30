@@ -20,7 +20,6 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-inoremap jj <esc>
 
 set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
@@ -29,7 +28,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 set ruler
 set number
-" set relativenumber
+set relativenumber
 set backspace=indent,eol,start
 
 " searching
@@ -55,7 +54,4 @@ nnoremap k gk
 
 " colors
 set background=dark
-colorscheme jellybeans
-
-" highlight comments in vim
-"highlight Comment cterm=italic
+colorscheme necromancer
