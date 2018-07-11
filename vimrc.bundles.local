@@ -13,3 +13,4 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+Plug 'itchyny/lightline.vim'

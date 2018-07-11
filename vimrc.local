@@ -43,5 +43,7 @@ nnoremap k gk
 
 " colors
 set background=dark
-" colorscheme jellybeans
+let g:lightline = {
+      \ 'colorscheme': 'necromancer',
+      \ }
 colorscheme necromancer

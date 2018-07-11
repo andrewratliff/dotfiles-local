@@ -8,3 +8,10 @@ alias props="~/dotfiles-local/functions.sh cat_properties $1"
 alias zhis="cat ~/.zhistory"
 alias linkvim="ln -s ~/.vim ~/.config/nvim"
 alias linkvimrc="ln -s ~/.vimrc ~/.config/nvim/init.vim"
+
+# Colors to work with tmux/vim
+alias tmux="TERM=screen-255color-bce tmux"
+
+alias dots="~/dotfiles-local"
+alias reload="source ~/.zshrc"
+alias notes="cd ~/Dropbox/notes"
