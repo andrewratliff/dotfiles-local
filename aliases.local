@@ -8,6 +8,7 @@ alias props="~/dotfiles-local/functions.sh cat_properties $1"
 alias zhis="cat ~/.zhistory"
 alias linkvim="ln -s ~/.vim ~/.config/nvim"
 alias linkvimrc="ln -s ~/.vimrc ~/.config/nvim/init.vim"
+alias gpf="git push --force-with-lease"
 
 # Colors to work with tmux/vim
 alias tmux="TERM=screen-255color-bce tmux"

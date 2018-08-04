@@ -23,7 +23,6 @@ nnoremap <right> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
-inoremap <right> <nop>
 
 " searching
 set hlsearch
@@ -42,8 +41,13 @@ nnoremap j gj
 nnoremap k gk
 
 " colors
-set background=dark
 let g:lightline = {
       \ 'colorscheme': 'necromancer',
       \ }
+
+if has('nvim')
+  set termguicolors " nvim gui colors
+endif
+
 colorscheme necromancer
+set background=dark

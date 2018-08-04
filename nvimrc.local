@@ -37,13 +37,53 @@ set incsearch
 set ignorecase
 set smartcase
 
+" === Neovim terminal mappings ===
+if has('nvim')
+  augroup TerminalNumbers
+    autocmd!
+    autocmd TermOpen * setlocal nonumber norelativenumber
+  augroup END
+
+  augroup TerminalExitStatus
+    autocmd!
+    autocmd TermClose * call feedkeys("\<CR>")
+  augroup END
+
+  augroup TerminalInsert
+    autocmd!
+    autocmd BufEnter * if &buftype == 'terminal' |:startinsert| endif
+  augroup END
+endif
+
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
+tnoremap <Esc> <C-\><C-n>```
+
+" === nvim :terminal colors ===
+let g:terminal_color_0  = '#25272c'
+let g:terminal_color_1  = '#ba2a2a'
+let g:terminal_color_2  = '#008542'
+let g:terminal_color_3  = '#eac06e'
+let g:terminal_color_4  = '#7e8aa2'
+let g:terminal_color_5  = '#8d4888'
+let g:terminal_color_6  = '#006596'
+let g:terminal_color_7  = '#53586f'
+let g:terminal_color_8  = '#354151'
+let g:terminal_color_9  = '#c95f5f'
+let g:terminal_color_10 = '#73ba25'
+let g:terminal_color_11 = '#f07d30'
+let g:terminal_color_12 = '#81a3cf'
+let g:terminal_color_13 = '#e35682'
+let g:terminal_color_14 = '#25b8a5'
+let g:terminal_color_15 = '#f6f9fc'```
+
 " automatically change current directory to the file you are editing
 set autochdir
 
 " yanks to OSX clipboard
-if $TMUX == ''
-  set clipboard=unnamed
-endif
+set clipboard=unnamedplus " copy paste to system clipboard
 
 " set leader to spacebar
 :let mapleader = " "
@@ -53,5 +93,7 @@ nnoremap j gj
 nnoremap k gk
 
 " colors
-set background=dark
+set termguicolors " nvim gui colors
 colorscheme necromancer
+set background=dark
+
