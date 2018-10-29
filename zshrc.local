@@ -24,5 +24,7 @@ export CL=/Users/aratliff/src/commonlit/commonlit
 #   fi
 # }
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

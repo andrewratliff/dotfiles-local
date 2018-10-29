@@ -9,6 +9,7 @@ alias zhis="cat ~/.zhistory"
 alias linkvim="ln -s ~/.vim ~/.config/nvim"
 alias linkvimrc="ln -s ~/.vimrc ~/.config/nvim/init.vim"
 alias gpf="git push --force-with-lease"
+alias ll="ls -alh"
 
 # Colors to work with tmux/vim
 alias tmux="TERM=screen-255color-bce tmux"
